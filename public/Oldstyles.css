@@ -12,10 +12,32 @@
   position: relative;
   height: 80px;
   width: 100%;
-  background: rgba(0,0,0,0.4);
+  /* background: rgba(0,0,0,0.4); */
 }
-table,td{
-  padding: 0 15px 0 15px;
+.menu{
+  margin:0 30px 0 0;
+  float:right;
+}
+.menu a{
+  clear:right;
+  text-decoration: none;
+  color:white;
+  margin:0 10px;
+  line-height: 80px;
+}
+label{
+  margin:0 40px 0 0 ;
+  font-size: 26px;
+  line-height: 80px;
+  display: none;
+  float:right;
+  color: gray;
+  width: 26px;
+}
+#toggle{
+  color:white;
+  display: block;
+  float: right;
 }
 .logo{
   color:white;
@@ -26,11 +48,12 @@ table,td{
   margin-top: 10px;
 }
 .logoWords{
-  font-style: italic;
+  display: block;
   color:white;
   height: auto;
-  padding: 5px, 0px, 10px, 35px;
+  padding: 5px, 0px, 10px, 5px;
   font-size: 38px;
+  z-index: 10;
 }
 .bannerTitle{
   position: absolute;
@@ -46,23 +69,7 @@ table,td{
   text-shadow: 4px 4px rgb(199, 4, 4);
   width: auto;
   height: auto;
-}
-.navbar ul{
-  float: right;
-  margin-right: 20px;
-  text-decoration: none! important;
-  color:white;
-  
-}
-.navbar ul li{
-  list-style: none;
-  margin: 0 8px;
-  display: inline-block;
-  line-height: 80px;
-}
-.navbar ul li a{
-  text-decoration: none;
-  color:white;
+  z-index: 10;
 }
 .subtitle{
   position:absolute;
@@ -112,17 +119,13 @@ table,td{
   display: inline-block;
   text-align: center;
 }
-.lauren{
-  height: 300px;
-  width:auto;
-}
 .smooth{
-  color:black;
+  color:white;
   font-size: 13px;
   font-style: italic;
-  margin-right: 10px;
-  float: right;
-}
+  margin-left: 5px;
+  float: left;
+} 
 .center{
   position:relative;
   text-align: center;
@@ -133,12 +136,6 @@ table,td{
   left:50%;
   transform: translateX(-50%);
 }
-/* .mapContainer{
-  height: 100vh;
-  width: auto;
-  background-color: rgb(247, 215, 174);
-  
-} */
 .mapText{
   padding-top: 30px;
   color:white;
@@ -214,53 +211,102 @@ table,td{
 }
 
 
-/* Style the navigation menu */
-.topnav {
-  display: none;
-  overflow: hidden;
-  background-color: #333;
-  position: relative;
-}
 
-/* Hide the links inside the navigation menu (except for logo/home) */
-.topnav a {
-  display: none;
-}
 
-/* Style navigation menu links */
-.topnav a {
-  color: rgb(141, 130, 86);
-  padding: 14px 16px;
-  text-decoration: none;
+nav{
+  background: #0082e6;
+  height: 80px;
+  width: 100%;
+}
+/* label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+} */
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
   font-size: 17px;
-  display: none;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
 }
-
-/* Style the hamburger menu */
-.topnav a.icon {
-  display: none;
-  background:cornsilk;
-  border: black 2px solid;
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
+a.active,a:hover{
+  background: #1b9bff;
+  transition: .5s;
 }
-
-/* Add a grey background color on mouse-over */
-.topnav a:hover {
-  display: none;
-  background-color: rgb(141, 130, 86);
-  color: black;
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
   cursor: pointer;
-}
-
-/* Style the active link (or home/logo) */
-.active {
   display: none;
-  /* background-color: #4CAF50; */
-  color: cornsilk;
 }
+#check{
+  display: block;
+}
+@media (max-width: 952px){
+  /* label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  } */
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+/* section{
+  background: url(bg1.jpg) no-repeat;
+  background-size: cover;
+  height: calc(100vh - 80px);
+} */
+
+
+
+
+
+
 
 
 
@@ -268,10 +314,10 @@ table,td{
   .bannerTitle{
     font-size: 25px;
   }
-
+/* 
   .logoWords{
   display: none;
-  }
+  } */
 
   .subtitle{
     font-size: 10px;
@@ -286,15 +332,13 @@ table,td{
   .glassTitle{
     color:cornsilk;
   }
-  .navbar li a{
-    display: none;
-  }
   .bannerTitle{
     text-shadow: 2px 2px rgb(199, 4, 4);
   }
   .schedule{
     font-size: 13px;
     padding: 2px;
+    margin: 0 10px 0 0;
   }
   .logo{
   display: none;
@@ -302,36 +346,22 @@ table,td{
   .mapText{
     font-size:13px;
   }
+  label{
+    display: block;
+    cursor: pointer;
+  }
+  .menu{
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+  .menu a {
+    display: block;
+    border-bottom: 1px solid black;
+    margin: 0;
+  }
+  #toggle:checked + .menu {
+    display:block;
+  }
 
-
-/* Style the navigation menu */
-.topnav {
-  display: block;
-}
-
-/* Hide the links inside the navigation menu (except for logo/home) */
-.topnav a {
-  display: block;
-}
-
-/* Style navigation menu links */
-.topnav a {
-  display: block;
-}
-
-/* Style the hamburger menu */
-.topnav a.icon {
-  display: block;
-
-}
-
-/* Add a grey background color on mouse-over */
-.topnav a:hover {
-  display: block;
-}
-
-/* Style the active link (or home/logo) */
-.active {
-  display: block;
-}
 }

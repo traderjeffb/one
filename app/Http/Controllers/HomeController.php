@@ -15,7 +15,7 @@ class HomeController extends Controller
     {
         return view('index');
     }
-
+    
     public function map()
     {
         return view('map');

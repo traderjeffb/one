@@ -13,15 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/map', function () {
-    return view('map');
-});
-Route::get('/schedule', function () {
-    return view('schedule');
-});
-Route::get('/tickets', function () {
-    return view('tickets');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+Route::get('/', 'App\Http\Controllers\HomeController@index')->name('index');
+Route::get('/map', 'App\Http\Controllers\HomeController@map')->name('map');
+Route::get('/schedule', 'App\Http\Controllers\HomeController@schedule')->name('schedule');
+
+
