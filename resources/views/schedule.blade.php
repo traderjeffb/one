@@ -3,6 +3,9 @@
 @section('title', 'Schedule')
 
 @section('content')
+<div class="subtitle">
+  An Immersive Fundraising Experience!
+</div>
     <div class="table">
   <table class="schedule center">
     <tr class="headers">
