@@ -348,8 +348,8 @@ display: inline-block;
     display: inline;
     font-size: 21px;
   }
-  .map{
-    width: 200px;
+  .map iframe{
+    width: 300px;
     height: auto;
   }
 }
